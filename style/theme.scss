@@ -1,0 +1,190 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic);
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap');
+$font-family-sans-serif: 'Open Sans';
+$font-family-monospace: 'Ubuntu Mono';
+$presentation-font-size-root: 32px;
+$fa-font-path: "fa/webfonts";
+
+// colors
+$body-color: #696969;
+$presentation-heading-color: lighten($body-color, 10%);
+
+// title slide
+$presentation-title-slide-text-align: left;
+
+/*-- scss:rules --*/
+// fonts
+.reveal .footer > * {
+  font-size: 1rem;
+  text-align: right;
+  margin-right: 5%;
+}
+.reveal h1 { color: black; }
+.reveal {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    margin-bottom: .8em;
+  }
+}
+.reveal .slide figure>figcaption { text-align: center; }
+.reveal blockquote {
+  color: darken($body-color, 10%);
+}
+// font awesome
+.reveal i.fa {
+  font-family: 'FontAwesome';
+  font-style: normal;
+}
+
+// accent colors
+.reveal .accent1 { color: #E16A86 !important; }
+.reveal .accent2 { color: #AA9000 !important; }
+.reveal .accent3 { color: #00AA5A !important; }
+.reveal .accent4 { color: #00A6CA !important; }
+.reveal .accent5 { color: #B675E0 !important; }
+// definition
+.definition {
+  border-left: solid 5px darken($body-color, 10%);
+  padding-inline-start: 20px;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+.reveal .text-center {
+  text-align: center; 
+}
+.reveal .nobullet ul {
+  list-style-type: none;
+}
+.reveal .flex {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+}
+// venn diagram
+.venn {
+  display: inline-block;
+  position: relative;
+  border: solid 3px black;
+  height: 200px;
+  width: 350px;
+  &::after{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    content: "\03A9";
+    font-size: .8em;
+  }
+  &.center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  div {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    position: absolute;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .label-a {
+    position: absolute;
+    left: 25px;
+    top: 70px;
+    z-index: 20;
+    border: none;
+    text-align: left;
+  }
+  .label-b {
+    position: absolute;
+    right: 25px;
+    top: 70px;
+    z-index: 20;
+    border: none;
+    text-align: right;
+  }
+  .outer {
+    top: 25px;
+    z-index: 10;
+  }
+  .shell {
+    border-color: black;
+    z-index: 50;
+  }
+  .white {
+    background-color: white;
+  }
+  &.fill, .fill {
+    background-color: lighten($body-color, 50%);
+  }
+  .fill-alt {
+    background: repeating-linear-gradient(
+      to bottom,
+      $body-color,
+      $body-color 50%,
+      #ffffff 50%,
+      #ffffff);
+      background-size: 100% 5px;
+  }
+  
+  .event-a {
+    left: 50px;
+  }
+  .event-b {
+    right: 50px;
+  }
+  .intersection-a {
+    top: 25px;
+    left: 50px;
+    overflow: hidden;
+  }
+  .intersection-b {
+    left: 96px;
+    border: none;
+    z-index: 15;
+  }
+  &.me {
+    .event-a { left: 10px; }
+    .event-b { right: 10px; }
+    .label-a {
+      top: 65px;
+      left: 10px;
+      text-align: center;
+    }
+    .label-b {
+      top: 65px;
+      right: 10px;
+      text-align: center;
+    }
+  }
+  &.im {
+   .event-a {
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+    }
+    .event-b {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .label-a {
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -7%);
+      text-align: center;
+    }
+    .label-b {
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+  }
+}
