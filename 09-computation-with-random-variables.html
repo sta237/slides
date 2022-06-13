@@ -350,7 +350,7 @@
 </div><div class="column" style="width:70%;">
 <div class="r-fit-text">
 <p>(Adopted from Devore &amp; Berk Chapter 5 Exercise 9 &amp; 44)</p>
-<p>Each tire of a bicycle is supposed to be filled to a pressure of 40 psi. Suppose the actual air pressure in each tire is a random variable - <span class="math inline">\(X\)</span> for the right tire and <span class="math inline">\(Y\)</span> for the left tire, with joint probability density function</p>
+<p>Each tire of a bicycle is supposed to be filled to a pressure of 40 psi. Suppose the actual air pressure in each tire is a random variable - <span class="math inline">\(X\)</span> for the <del>right</del>front tire and <span class="math inline">\(Y\)</span> for the <del>left</del>rear tire, with joint probability density function</p>
 <p><span class="math display">\[f\left(x,y\right)=\begin{cases}K\left(x^2+y^2\right) &amp; 20 \le x \le 50, 20 \le y \le 50 \\ 0 &amp; \text{otherwise.}\end{cases}\]</span></p>
 </div>
 </div>
@@ -359,7 +359,7 @@
 <section id="section-1" class="slide level2">
 <h2></h2>
 <div class="r-fit-text">
-<p><span class="math inline">\(X\)</span> is the pressure of the right tire and <span class="math inline">\(Y\)</span> is the pressure of the left tire, with joint probability density function</p>
+<p><span class="math inline">\(X\)</span> is the pressure of the <del>right</del>front tire and <span class="math inline">\(Y\)</span> is the pressure of the <del>left</del>rear tire, with joint probability density function</p>
 <p><span class="math display">\[f\left(x,y\right)=\begin{cases}K\left(x^2+y^2\right) &amp;  20 \le x \le 50, 20 \le y \le 50 \\ 0 &amp; \text{otherwise.}\end{cases}\]</span></p>
 </div>
 <p>What is the value of <span class="math inline">\(K\)</span>?</p>
@@ -397,7 +397,7 @@
 <section id="section-2" class="slide level2">
 <h2></h2>
 <div class="r-fit-text">
-<p><span class="math inline">\(X\)</span> is the pressure of the right tire and <span class="math inline">\(Y\)</span> is the pressure of the left tire, with joint probability density function</p>
+<p><span class="math inline">\(X\)</span> is the pressure of the front tire and <span class="math inline">\(Y\)</span> is the pressure of the rear tire, with joint probability density function</p>
 <p><span class="math display">\[f\left(x,y\right)=\begin{cases}K\left(x^2+y^2\right) &amp;  20 \le x \le 50, 20 \le y \le 50 \\ 0 &amp; \text{otherwise.}\end{cases}\]</span></p>
 </div>
 <div class="columns">
@@ -437,38 +437,51 @@
 <section id="section-3" class="slide level2">
 <h2></h2>
 <div class="r-fit-text">
-<p><span class="math inline">\(X\)</span> is the pressure of the right tire and <span class="math inline">\(Y\)</span> is the pressure of the left tire, with joint probability density function</p>
+<p><span class="math inline">\(X\)</span> is the pressure of the front tire and <span class="math inline">\(Y\)</span> is the pressure of the rear tire, with joint probability density function</p>
 <p><span class="math display">\[f\left(x,y\right)=\begin{cases}K\left(x^2+y^2\right) &amp;  20 \le x \le 50, 20 \le y \le 50 \\ 0 &amp; \text{otherwise.}\end{cases}\]</span></p>
 </div>
 <p>Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
-<div class="columns">
-<div class="column" style="width:45%;">
 <div class="fragment text-center">
-<p>No, because we can’t factor<br>
-<span class="math inline">\(f(x,y)\)</span> into <span class="math inline">\(f_X(x)\cdot f_Y(y)\)</span>.</p>
+<p>No, because we can’t factor <span class="math inline">\(f(x,y)\)</span> into <span class="math inline">\(f_X(x)\cdot f_Y(y)\)</span>.</p>
 </div>
-</div><div class="column" style="width:10%;">
-
-</div><div class="column fragment" style="width:45%;">
+<div class="fragment">
 <p>What is the <em>conditional</em> cumulative distribution function of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\le a\)</span>?</p>
-<div class="nobullet r-fit-text">
-<ul>
-<li class="fragment">For <span class="math inline">\(20\le a\le 50\)</span> and <span class="math inline">\(20\le b\le 50\)</span>, <span class="math inline">\(F_{Y|X}(b|x) = P(Y\le b | X \le a)\)</span></li>
-<li class="fragment"><span class="math inline">\(=\frac{P(Y\le b, X\le a)}{P(X\le a)}\)</span></li>
-<li class="fragment"><span class="math inline">\(=\frac{\int_{20}^{b}\int_{20}^a K(x^2+y^2) dxdy }{F_X(x)}\)</span></li>
-<li class="fragment"><span class="math inline">\(=\cdots\)</span></li>
-</ul>
-</div>
-<div class="fragment r-fit-text">
-<p>How about when <span class="math inline">\(20\le a \le 50\)</span> and <span class="math inline">\(b &gt; 50\)</span>?</p>
-</div>
-</div>
 </div>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-4" class="slide level2 center">
+<h2></h2>
+<div class="columns">
+<div class="column">
+<p>We write</p>
+<p><span class="math display">\[p_{Y|X}(y|x)=\frac{p_{X,Y}(x,y)}{p_X(x)}\]</span></p>
+<p>when <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are discrete, and</p>
+<p><span class="math display">\[f_{Y|X}(y|x)=\frac{f_{X,Y}(x,y)}{f_X(x)}.\]</span></p>
+<p>when <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are continuous.</p>
+</div><div class="column">
+<p>I may write <span class="math inline">\(p_{Y|X}(y)\)</span> and <span class="math inline">\(f_{Y|X}(y)\)</span> to describe conditional probability mass/density functions where the conditions are not fixed but remain random.</p>
+<p>For example <span class="math inline">\(f_{Y|X}(y)= \frac{1}{X}\)</span> for <span class="math inline">\(y\in(0,X)\)</span> when <span class="math inline">\(Y\)</span> is <span class="math inline">\(U(0, X)\)</span> and <span class="math inline">\(X\)</span> is random.</p>
+</div>
+</div>
+<hr>
+<p><em>See Section 5.3 of Devore and Berk for detailed discussions on conditional distributions.</em></p>
+<p><em>For cumulative distribution functions, we won’t use</em> <span class="math inline">\(F_{Y|X}\)</span> <em>notation, but will write</em> <span class="math inline">\(P(Y\le b|X\le x)\)</span>, <span class="math inline">\(P(Y\le b| X=x)\)</span>, <em>etc. to avoid confusion.</em></p>
+</section>
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="r-fit-text">
-<p>Now suppose, wheels are taken off a bicycle and you randomly choose one of the tires to check its pressure. What is the expected pressure of the selected tire? Let <span class="math inline">\(W=0\)</span> if you select the right tire, <span class="math inline">\(W=1\)</span> if you select the left tire, and <span class="math inline">\(V\)</span> be the final pressure measurement.</p>
+<p><span class="math inline">\(X\)</span> is the pressure of the front tire and <span class="math inline">\(Y\)</span> is the pressure of the rear tire, with joint probability density function</p>
+<p><span class="math display">\[f\left(x,y\right)=\begin{cases}K\left(x^2+y^2\right) &amp;  20 \le x \le 50, 20 \le y \le 50 \\ 0 &amp; \text{otherwise.}\end{cases}\]</span></p>
+</div>
+<p>What is the <em>conditional</em> cumulative distribution function of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\le a\)</span>?</p>
+<p>For <span class="math inline">\(20\le a\le 50\)</span> and <span class="math inline">\(20\le b\le 50\)</span>, <span class="math display">\[P(Y\le b | X \le a)=\frac{P(Y\le b, X\le a)}{P(X\le a)}=\frac{\int_{20}^{b}\int_{20}^a K(x^2+y^2) dxdy }{F_X(x)}=\cdots\]</span></p>
+<div class="fragment text-center">
+<p>How about when <span class="math inline">\(20\le a \le 50\)</span> and <span class="math inline">\(b &gt; 50\)</span>?</p>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>Now suppose, wheels are taken off a bicycle and you randomly choose one of the tires to check its pressure. What is the expected pressure of the selected tire? Let <span class="math inline">\(W=0\)</span> if you select the front tire, <span class="math inline">\(W=1\)</span> if you select the rear tire, and <span class="math inline">\(V\)</span> be the final pressure measurement.</p>
 </div>
 <div class="columns">
 <div class="column" style="width:45%;">
@@ -488,8 +501,8 @@
 <p>What is the conditional distribution of <span class="math inline">\(V\)</span> given <span class="math inline">\(W\)</span>?</p>
 <div class="nobullet r-fit-text">
 <ul>
-<li class="fragment">When <span class="math inline">\(W=0\)</span>, <span class="math inline">\(f_{V|W}(v)=f_X(v)\)</span>.</li>
-<li class="fragment">When <span class="math inline">\(W=1\)</span>, <span class="math inline">\(f_{V|W}(v)=f_Y(v)\)</span>.</li>
+<li class="fragment">When <span class="math inline">\(W=0\)</span>, <span class="math inline">\(f_{V|W}(v|0)=f_X(v)\)</span>.</li>
+<li class="fragment">When <span class="math inline">\(W=1\)</span>, <span class="math inline">\(f_{V|W}(v|1)=f_Y(v)\)</span>.</li>
 <li class="fragment">By symmetry of <span class="math inline">\(f(x,y)\)</span>, we have <span class="math inline">\(f_X(v)=f_Y(v)\)</span>.</li>
 </ul>
 </div>
@@ -501,13 +514,28 @@
 <div class="fragment text-center">
 <p>How about the marginal distribution of <span class="math inline">\(V\)</span>?</p>
 </div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>How about the marginal distribution of <span class="math inline">\(V\)</span>?</p>
+</div>
+<div class="r-fit-text">
+<p>By definition,</p>
+<p><span class="math display">\[F_V(v)=P\left(V\le v\right)\]</span></p>
+<p>By the law of total probability, <span class="math display">\[P\left(V\le v\right)=P\left(V\le v |W=0\right)P\left(W=0\right) + P\left(V\le v |W=1\right)P\left(W=1\right)\]</span></p>
+<p>When <span class="math inline">\(W=0\)</span>, <span class="math inline">\(V\)</span> is the measurement of tire <span class="math inline">\(X\)</span>, and when <span class="math inline">\(W=1\)</span>, <span class="math inline">\(V\)</span> is the measurement of <span class="math inline">\(Y\)</span>.</p>
+<p><span class="math display">\[\implies P\left(V\le v |W=0\right)P\left(W=0\right) + P\left(V\le v |W=1\right)P\left(W=1\right)=F_X\left(v\right)\frac{1}{2} + F_Y\left(v\right)\frac{1}{2}\]</span></p>
+<p>Because <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have the same marginal distributions,</p>
+<p><span class="math display">\[\implies F_V(v)=F_X(v)\]</span></p>
+</div>
 </section></section>
 <section>
 <section id="example-bikepacking" class="title-slide slide level1 center">
 <h1>Example: Bikepacking</h1>
 
 </section>
-<section id="section-5" class="slide level2 center">
+<section id="section-8" class="slide level2 center">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:30%;">
@@ -529,25 +557,25 @@
 </div>
 </div>
 </section>
-<section id="section-6" class="slide level2 center">
+<section id="section-9" class="slide level2 center">
 <h2></h2>
 <div class="r-fit-text">
 <p><span class="math inline">\(T_i\sim\text{Geom}(1/5)\)</span> is the number of days until <span class="math inline">\(i\)</span>th tube fails.</p>
 </div>
 <div class="fragment r-fit-text">
-<p>Michael decides to compute <span class="math inline">\(E(T_1 + T_2 - 1)\)</span> and check whether it is larger than 7. If it is, Michael plans to bring only pair of extra tubes for the trip.</p>
-<div class="nobullet">
-<ul>
-<li class="fragment"><span class="math inline">\(E(T_1 + T_2 - 1)=E(T_1)+E(T_2)-1\)</span></li>
-<li class="fragment"><span class="math inline">\(=5 + 5 = 9\)</span></li>
-</ul>
+<p>Michael decides to compute <span class="math inline">\(E(T_1 + T_2 - 1)\)</span><sup>**</sup> and check whether it is larger than 7. If it is, Michael plans to bring only pair of extra tubes for the trip.</p>
+<div class="fragment">
+<p><span class="math display">\[E(T_1 + T_2 - 1)=E(T_1)+E(T_2)-1=5 + 5 -1= 9\]</span></p>
 </div>
 <div class="fragment">
 <p>Michael thus concludes one more extra pair will last him about 10 days and decides to bring only 1 extra pair.</p>
 </div>
+<br>
+<hr>
+<p><sup>**</sup>The <span class="math inline">\((-1)\)</span> term is added based on the assumption that the second set of tubes can fail on the same day the first pair fails.</p>
 </div>
 </section>
-<section id="section-7" class="slide level2 center">
+<section id="section-10" class="slide level2 center">
 <h2></h2>
 <div class="r-fit-text">
 <p><span class="math inline">\(T_i\sim\text{Geom}(1/5)\)</span> is the number of days until <span class="math inline">\(i\)</span>th tube fails.</p>
@@ -603,7 +631,7 @@
 </div><div class="column">
 <div class="nobullet r-fit-text">
 <ul>
-<li class="fragment"><p><span class="math inline">\(P(T_1 +T_2 &lt; 7)= \sum_{m=2}^6P(T_1 +T_2 = m)\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(P(T_1 +T_2 &lt; 8)= \sum_{m=2}^7P(T_1 +T_2 = m)\)</span></p></li>
 <li class="fragment"><p><span class="math inline">\(P(T_1 + T_2 = 2) = p_1(1)p_2(1)\)</span></p></li>
 <li class="fragment"><p><span class="math inline">\(P(T_1 + T_2 = 3) = p_1(1)p_2(2) + p_1(2)p_2(1)\)</span></p></li>
 <li class="fragment"><p><span class="math inline">\(\vdots\)</span></p></li>
@@ -631,7 +659,7 @@
 </ul>
 </div>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <h3 id="example-sum-of-independent-binomial-random-variables">Example: Sum of independent binomial random variables</h3>
 <div class="columns">
@@ -660,7 +688,7 @@
 </div>
 </div>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <h3 id="example-sum-of-independent-binomial-random-variables-1">Example: Sum of independent binomial random variables</h3>
 <div class="columns">
@@ -714,7 +742,7 @@
 </div>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:45%;">
@@ -747,12 +775,12 @@
 <section id="sum-of-two-independent-continuous-random-variables" class="slide level2 center">
 <h2>Sum of two independent continuous random variables</h2>
 <div class="definition">
-<p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two independent continuous random variables, with probability density functions <span class="math inline">\(f_X\)</span> and <span class="math inline">\(f_Y\)</span>, respoective. Then, the probability density function <span class="math inline">\(f_Z\)</span> of <span class="math inline">\(Z=X+Y\)</span> is given by</p>
+<p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two independent continuous random variables, with probability density functions <span class="math inline">\(f_X\)</span> and <span class="math inline">\(f_Y\)</span>, respectively. Then, the probability density function <span class="math inline">\(f_Z\)</span> of <span class="math inline">\(Z=X+Y\)</span> is given by</p>
 <p><span class="math display">\[f_Z(z)=\int_{-\infty}^\infty f_X\left(z-y\right)f_Y\left(y\right)dy\]</span></p>
 <p>for <span class="math inline">\(-\infty &lt; z &lt; \infty\)</span>.</p>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <h3 id="example-single-server-queue">Example: Single-server queue</h3>
 <p>Suppose time until the first customer’s arrival from the opening hour at Michael’s cafe is <span class="math inline">\(T_1\)</span> and the time between the arrival of <span class="math inline">\((i-1)\)</span>th and <span class="math inline">\(i\)</span>th customer for <span class="math inline">\(i=2,3,4\)</span>,… The intervals between customer arrivals are independent and follows <span class="math inline">\(\text{Exp}(\lambda)\)</span>. What is the distribution of <span class="math inline">\(Z_2=T_1+T_2\)</span>?</p>
@@ -764,7 +792,11 @@
 </ul>
 </div>
 <div class="fragment text-center">
-<p><span class="math inline">\(Z_n \sim \text{Gamma}(2, \lambda)\)</span> (See pg., 156 in Dekking et al.)</p>
+<p><span class="math inline">\(Z_2 \sim \text{Gamma}(2, \lambda)\)</span></p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p>In fact, <span class="math inline">\(Z_n \sim \text{Gamma}(n, \lambda)\)</span> where <span class="math inline">\(Z_n=\sum_{i=1}^n T_i\)</span>. (See pg., 156 in Dekking et al.)</p>
 </div>
 </section>
 <section id="product-of-two-independent-continuous-random-variables" class="slide level2">
@@ -793,7 +825,7 @@
 </ul>
 </div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <h3 id="example-mean-of-n-normal-random-variables">Example: Mean of <span class="math inline">\(n\)</span> normal random variables</h3>
 <p>Suppose <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, …, <span class="math inline">\(X_n\)</span> are independent and identically distributed <span class="math inline">\(N\left(\mu, \sigma^2\right)\)</span> random variables. What is the distribution of their average?</p>
@@ -802,7 +834,7 @@
 <p><span class="math display">\[\overline{X}\sim N\left(\mu, \frac{\sigma^2}{n}\right)\]</span></p>
 </div>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <h3 id="practice-questions">Practice questions</h3>
 <ul>
