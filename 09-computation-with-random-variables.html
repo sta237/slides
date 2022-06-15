@@ -405,7 +405,8 @@
 <p>What is the marginal probability density function of <span class="math inline">\(X\)</span>?</p>
 <div class="nobullet r-fit-text">
 <ul>
-<li class="fragment">For <span class="math inline">\(20\le x\le 50\)</span>, <span class="math inline">\(f_X(x)=\int_{20}^{50} K(x^2+y^2) dy\)</span></li>
+<li class="fragment">For <span class="math inline">\(20\le x\le 50\)</span>,<br>
+<span class="math inline">\(\phantom{=}f_X(x)=\int_{20}^{50} K(x^2+y^2) dy\)</span></li>
 <li class="fragment"><span class="math inline">\(=30Kx^2 + K\frac{50^3-20^3}{3}=\frac{x^2}{78\ 000} + \frac{13}{780}\)</span></li>
 </ul>
 </div>
@@ -415,7 +416,8 @@
 <p>What is the marginal cumulative distribution function of <span class="math inline">\(X\)</span>?</p>
 <div class="nobullet r-fit-text">
 <ul>
-<li class="fragment">For <span class="math inline">\(20\le x\le 50\)</span>, <span class="math inline">\(F_X(a)=\int_{20}^a \left(\frac{x^2}{78\ 000} +\frac{13}{780}\right) dx\)</span></li>
+<li class="fragment">For <span class="math inline">\(20\le a\le 50\)</span>,<br>
+<span class="math inline">\(\phantom{=}F_X(a)=\int_{20}^a \left(\frac{x^2}{78\ 000} +\frac{13}{780}\right) dx\)</span></li>
 <li class="fragment"><span class="math inline">\(=\frac{a^3-20^3}{234\ 000}+\frac{13(a-20)}{780}\)</span></li>
 <li class="fragment"><span class="math inline">\(=\frac{1}{234\ 000}a^3+\frac{1}{60}a-\frac{43}{117}\)</span></li>
 </ul>
@@ -763,7 +765,7 @@
 <li><span class="math inline">\(F_Z(a)=\int_0^{a-1}\int_0^1 1 dydx + \int_{a-1}^1\int_0^{a-x} 1 dydx\)</span></li>
 <li><span class="math inline">\(=\int_0^{a-1}dx + \int_{a-1}^1 a-x dx\)</span></li>
 <li><span class="math inline">\(=(a-1) + a - (a^2 - a) -\frac{1-(a-1)^2}{2}\)</span></li>
-<li><span class="math inline">\(2a -\frac{a^2}{2}-1\)</span></li>
+<li><span class="math inline">\(=2a -\frac{a^2}{2}-1\)</span></li>
 </ul>
 </div>
 </div>
